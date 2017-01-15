@@ -1,4 +1,8 @@
 *.pyc
-*.swp
 bzoj/*
 git-push.sh
+
+#vim
+*.swp
+#emacs
+*~
