@@ -27,6 +27,9 @@ while True:
         pid = pid + 1
         continue
     pid = pid + 1
-    for i in range(interval):
+    interval_minute=interval/60
+    interval_second=interval%60
+    for i in range(interval_minute):
         a.sendheartbeat()
         time.sleep(60)
+    time.sleep(interval_second)
