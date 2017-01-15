@@ -9,9 +9,8 @@ global DEBUG; DEBUG = 0
 class AutoACMoton:
     def __init__(self):
         if not DEBUG:
-            username = 'TempXXX'; password = '123456'
             self.contestant = bzoj_bot.BZOJBot()
-            self.contestant.login(username, password)
+            self.contestant.login()
 
     def quit(self):
         if not DEBUG:
