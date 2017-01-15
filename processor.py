@@ -7,6 +7,7 @@ def html_ESC_decode(text):
     text = re.sub('&lt;','<',text)
     text = re.sub('&gt;','>',text)
     text = re.sub('&nbsp;',' ',text)
+    text = re.sub('&#39;','\'',text)
     return text
 
 pattern_process_crayon_content = re.compile('(?s)<div class="crayon-line.*?>(.*?)</div>')

@@ -13,11 +13,11 @@ class AutoACMoton:
             self.contestant = bzoj_bot.BZOJBot()
             self.contestant.login(username, password)
 
-    def quit():
+    def quit(self):
         if not DEBUG:
             self.contestant.logout()
 
-    def sendheartbeat():
+    def sendheartbeat(self):
         if not DEBUG:
             self.contestant.sendheartbeat()
 
