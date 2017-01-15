@@ -20,10 +20,10 @@ a = auto_ACmoton.AutoACMoton()
 pid = start_pid
 
 while True:
-    print '==========solving problem %d==========' % pid
+    print('==========solving problem %d==========' % pid)
     code = a.solve(pid)
     if code != 0:
-        print "cant solve problem %d, ErrorCode: %d" % (pid, code)
+        print("cant solve problem %d, ErrorCode: %d" % (pid, code))
         pid = pid + 1
         continue
     pid = pid + 1
