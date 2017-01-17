@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1cbc4545-3fa6-4592-b934-b6bb33166fe4}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>auto_ACmoton.py</StartupFile>
+    <StartupFile>is_accepted.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -13,6 +13,7 @@
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId />
     <InterpreterVersion />
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -26,6 +27,9 @@
     <Compile Include="do.py" />
     <Compile Include="grab.py" />
     <Compile Include="identify.py" />
+    <Compile Include="is_accepted.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="network.py" />
     <Compile Include="poj_bot.py" />
     <Compile Include="processor.py" />
