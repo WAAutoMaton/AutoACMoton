@@ -3,6 +3,7 @@ import time
 import bzoj_bot
 import identify
 import grab
+from data import Data
 
 global DEBUG; DEBUG = 0
 
@@ -20,11 +21,15 @@ class AutoACMoton:
         if not DEBUG:
             self.contestant.sendheartbeat()
 
-    ACCESS_DENIED = 1; CANT_FIND_SOLUTIONS = 2; CANT_SUBMIT = 3;
+    ACCESS_DENIED = 1; CANT_FIND_SOLUTIONS = 2; CANT_SUBMIT = 3; HAS_ACCEPTED = -1;
     def solve(self, pid):
         if not self.contestant.can_submit_code(pid):
             print("Please contact lydsy2012@163.com!")
             return self.ACCESS_DENIED
+        
+        if self.contestant.IsAccepted(Data.username,pid):
+            print("problem %d has Accepted, skiping..." % pid)
+            return self.HAS_ACCEPTED
 
         sols = grab.grab_from_baidu_page("bzoj%d" % pid)
         print('got solution list')

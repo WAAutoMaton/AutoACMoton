@@ -37,7 +37,7 @@ class BZOJBot:
     def can_submit_code(self, pid):
         problemurl = 'http://www.lydsy.com/JudgeOnline/problem.php?id=%d' % pid
         problem_page = self.network.getText(problemurl)
-        if identify.isproblempage(problem_page):return True
+        if identify.isproblempage(problem_page): return True
         return False
 
     def getresult(self, pid):
@@ -57,5 +57,7 @@ class BZOJBot:
             page = self.network.getText(url)
             statu = processor.getfirstresult(page)
         return statu
-    def isAC(self, pid):
-        url='http://www.lydsy.com/JudgeOnline/userinfo.php?user=%s' % Data.username
+    def IsAccepted(self,username,problemID):
+        page=Network.getpage("http://www.lydsy.com/JudgeOnline/userinfo.php?user=%s" % username)
+        pattern=re.compile("(.*)p\\(%d\\);(.*)</script>" % problemID)
+        return re.search(pattern,page)

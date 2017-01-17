@@ -27,6 +27,9 @@ pid = start_pid
 while True:
     print('==========solving problem %d==========' % pid)
     code = a.solve(pid)
+    if code == -1:
+        pid = pid + 1
+        continue
     if code != 0:
         print("can not solve problem %d, ErrorCode: %d" % (pid, code))
         pid = pid + 1

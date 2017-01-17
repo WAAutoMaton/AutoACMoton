@@ -4,14 +4,6 @@ import urllib
 import http.cookiejar
 
 NETWORK_SPEED_TEST = 0
-def getpage(url):
-    user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
-    headers = { 'User-Agent':user_agent }
-    request = urllib.request.Request(url, headers = headers)
-    if NETWORK_SPEED_TEST: print("recieving data")
-    response = urllib.request.urlopen(request)
-    if NETWORK_SPEED_TEST: print("data recieved")
-    return response.read().decode('utf-8','ignore')
 class Network:
     def __init__(self):
         self.cookiejar = http.cookiejar.CookieJar()
@@ -25,3 +17,11 @@ class Network:
         return self.open(url,postdata).read()
     def getText(self,url,postdata=None,encoding='utf-8',errors='ignore'):
         return self.openAndRead(url,postdata).decode(encoding,errors)
+    def getpage(url):
+        user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+        headers = { 'User-Agent':user_agent }
+        request = urllib.request.Request(url, headers = headers)
+        if NETWORK_SPEED_TEST: print("recieving data")
+        response = urllib.request.urlopen(request)
+        if NETWORK_SPEED_TEST: print("data recieved")
+        return response.read().decode('utf-8','ignore')
